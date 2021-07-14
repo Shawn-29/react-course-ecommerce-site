@@ -85,6 +85,7 @@ const filter_reducer = (state, action) => {
         case 'name-z':
           tempProducts.sort((a, b) => b.name.localeCompare(a.name));
         break;
+        default:
       }
 
       return {
@@ -106,8 +107,6 @@ const filter_reducer = (state, action) => {
       };
 
     case FILTER_PRODUCTS:
-
-      const {allProducts} = state;
 
       /* get filter values */
       const {
@@ -184,9 +183,9 @@ const filter_reducer = (state, action) => {
           isFreeShipping: false
         }
       };
+    default:
+      throw new Error(`No Matching "${action.type}" - action type`);
   }
-
-  throw new Error(`No Matching "${action.type}" - action type`)
 }
 
 export default filter_reducer;

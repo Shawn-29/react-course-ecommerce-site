@@ -6,11 +6,11 @@ export const UserProvider = ({ children }) => {
 
   /* data provided by Auth0 */
   const {
-    isAuthenticated, /* user has been authenticated and logged in */
+    // isAuthenticated, /* user has been authenticated and logged in */
     loginWithRedirect, /* function to login user then redirect on success */
     logout, /* function to log the user out */
     user, /* object with user data such as email address */
-    isLoading /* Auth0 is busy logging the user in or out */
+    // isLoading /* Auth0 is busy logging the user in or out */
   } = useAuth0();
 
   const [curUser, setCurUser] = useState(null);
